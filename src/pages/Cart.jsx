@@ -59,12 +59,12 @@ export default function Cart() {
                     <Group gap="md">
                         <Image
                             radius="md"
-                            h={50}
+                            h={'xl'}
                             w="auto"
                             fit="contain"
                             src={product.imageUrl}
                         />
-                        <span>
+                        <span style={{fontSize: "var(--mantine-font-size-xs)"}}>
                             {product.categoryName} {product.name}
                         </span>
                     </Group>
@@ -161,8 +161,8 @@ export default function Cart() {
                         <Table.Td>
                             Подытог
                         </Table.Td>
-                        <Table.Td>
-                            {totalPrice}
+                        <Table.Td fw={500}>
+                            {totalPrice} р.
                         </Table.Td>
                     </Table.Tr>
 
@@ -170,8 +170,8 @@ export default function Cart() {
                         <Table.Td>
                             Итого
                         </Table.Td>
-                        <Table.Td>
-                            {totalPrice}
+                        <Table.Td fw={500}>
+                            {totalPrice} р.
                         </Table.Td>
                     </Table.Tr>
                 </Table.Tbody>
