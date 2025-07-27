@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      sessionStorage.redirect = location.pathname;
+      // Сохраняем путь для React Router
+      sessionStorage.setItem('redirect', window.location.pathname);
+      // Перенаправляем на index.html
+      window.location.href = '/delivery-shop/';
     </script>
-    <meta http-equiv="refresh" content="0;URL='/delivery-shop'">
   </head>
   <body>
-    Redirecting to the homepage...
+    Redirecting...
   </body>
 </html>
