@@ -1,4 +1,4 @@
-import { Flex, Container, Stack, Text, Box, Button, Table, Title, Group, ActionIcon } from "@mantine/core";
+import { Flex, Container, Stack, Text, Box, Button, Table, Title, Group, ActionIcon, Image } from "@mantine/core";
 import { useCounter } from "@mantine/hooks";
 import { IconX } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
@@ -21,8 +21,9 @@ export default function Cart() {
         localStorage.setItem('productCart', JSON.stringify(updatedCart));
     };
 
-    const totalPrice = productCart.reduce((sum, item) => sum + item.count * item.price, 0);
-
+    const totalPrice = productCart.reduce((sum, item) => sum + Number(item.count || 1) * Number(item.price), 0);
+    console.log(productCart);
+    
     if (productCart.length == 0) {
         return (
             <Stack justify="center" align="center">
@@ -55,7 +56,20 @@ export default function Cart() {
                         <IconX />
                     </ActionIcon>
                 </Table.Td>
-                <Table.Td>{product.categoryName} {product.name}</Table.Td>
+                <Table.Td style={{ flexDirection: 'row' }}>
+                    <Group gap="md">
+                        <Image
+                            radius="md"
+                            h={50}
+                            w="auto"
+                            fit="contain"
+                            src={product.imageUrl}
+                        />
+                        <span>
+                            {product.categoryName} {product.name}
+                        </span>
+                    </Group>
+                </Table.Td>
                 <Table.Td fw={700}>{product.price} р.</Table.Td>
                 <Table.Td>
                     <Group gap={'sm'}>

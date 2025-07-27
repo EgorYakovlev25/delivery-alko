@@ -5,7 +5,7 @@ export default function ReviewsCard({ review }) {
     console.log(review);
 
     return (
-        <Carousel.Slide p={'lg'} mx={'lg'} bg={'gray.3'} bdrs={'md'}>
+        <Carousel.Slide p={'lg'} mx={'lg'} bg={'gray.1'} bdrs={'md'}>
             <Stack
                 justify="space-between"
                 w={'100%'}

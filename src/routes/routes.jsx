@@ -7,7 +7,7 @@ import Delivery from "../pages/Delivery";
 
 const Router = () => {
   return (
-    <HashRouter >
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Main />} />
@@ -17,7 +17,7 @@ const Router = () => {
         </Route>
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
-    </HashRouter >
+    </BrowserRouter >
   );
 };
 

@@ -8,7 +8,7 @@ export default function Main() {
     const navigate = useNavigate();
     return (
         <Stack gap="md" justify="center" align="center">
-            <Stack bg={'gray.3'} p={'xl'} mb={'xl'} bdrs={'md'} gap={'xl'} justify="center" align="center">
+            <Stack bg={'gray.1'} p={'xl'} mb={'xl'} bdrs={'md'} gap={'xl'} justify="center" align="center">
                 <Box size={'xs'} align="center">
                     <Text
                         size="xl"
