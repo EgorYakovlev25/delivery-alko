@@ -10,7 +10,7 @@ export default function Header() {
         { label: "ГЛАВНАЯ", href: "/" },
         { label: "МАГАЗИН", href: "/shop" },
         { label: "ДОСТАВКА И ОПЛАТА", href: "/delivery" },
-        { label: <IconBasket size={24} />, href: "/cart" },
+        { label: <Group gap={'xs'}>КОРЗИНА <IconBasket size={24} /></Group>, href: "/cart" },
     ];
 
     return (

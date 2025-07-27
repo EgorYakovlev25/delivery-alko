@@ -69,13 +69,15 @@ export default function Cart() {
                         </span>
                     </Group>
                 </Table.Td>
-                <Table.Td fw={700}>{product.price} р.</Table.Td>
+                <Table.Td fw={700} style={{fontSize: "var(--mantine-font-size-xs)"}}>{product.price} р.</Table.Td>
                 <Table.Td>
-                    <Group gap={'sm'}>
+                    <Group gap={'xs'}>
                         <Button
                             variant="outline"
                             color={'gray.7'}
                             onClick={() => updateProductCount(idx, Math.max(1, count - 1))}
+                            size="xs"
+                            p={'xs'}
                         >
                             -
                         </Button>
@@ -84,12 +86,14 @@ export default function Cart() {
                             variant="outline"
                             color={'gray.7'}
                             onClick={() => updateProductCount(idx, Math.min(15, count + 1))}
+                            size="xs"
+                            p={'xs'}
                         >
                             +
                         </Button>
                     </Group>
                 </Table.Td>
-                <Table.Td fw={700}>{count * product.price} р.</Table.Td>
+                <Table.Td fw={700} p={0} style={{fontSize: "var(--mantine-font-size-xs)"}}>{count * product.price} р.</Table.Td>
             </Table.Tr>
         )
     });
@@ -100,10 +104,28 @@ export default function Cart() {
             <Table
                 w={'100%'}
                 striped
-                stripedColor={'gray.4'}
+                stripedColor={'gray.1'}
                 withTableBorder
                 withRowBorders={false}
                 verticalSpacing="xl"
+                styles={(theme) => ({
+                    root: {
+                        '@media (max-width: 768px)': {
+                            fontSize: theme.fontSizes.xs,
+                            '& th, & td': {
+                                padding: '8px 4px',
+                            },
+                            '& button': {
+                                padding: '0 8px',
+                                minWidth: '30px',
+                                height: '30px',
+                            },
+                            '& img': {
+                                height: '40px',
+                            },
+                        },
+                    },
+                })}
             >
                 <Table.Thead>
                     <Table.Tr>
@@ -117,7 +139,17 @@ export default function Cart() {
                 <Table.Tbody>{rows}</Table.Tbody>
             </Table>
 
-            <Table style={{ width: 350, marginLeft: 'auto' }}>
+            <Table 
+                style={{ width: 350, marginLeft: 'auto' }}
+                styles={(theme) => ({
+                    root: {
+                        '@media (max-width: 768px)': {
+                            width: '100%',
+                            marginLeft: 0,
+                        },
+                    },
+                })}
+            >
                 <Table.Thead>
                     <Table.Tr>
                         <Text size="xl">Сумма заказа</Text>
