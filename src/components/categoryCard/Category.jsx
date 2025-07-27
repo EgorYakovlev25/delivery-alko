@@ -3,7 +3,7 @@ import CategoryCard from "./CategoryCard";
 
 export default function Category({ item, cart, addCart, deleteCart }){
     return (
-        <Stack mb={'xl'} justify="center">
+        <Stack mb={'xl'}>
             <Text size="xl" fw={700}>{item.categoryName}</Text>
             <Flex gap={'xl'} wrap={'wrap'} justify="flex-start">
                 {

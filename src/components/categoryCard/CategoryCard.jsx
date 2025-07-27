@@ -20,10 +20,7 @@ export default function CategoryCard({ product, cart, addCart, deleteCart }) {
             radius="md"
             withBorder
             w={200}
-            h={300}
-            // component="a"
-            // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            // target="_blank"      
+            h={300}     
             sx={{
                 transition: "transform 0.2s ease-in-out",
                 '&:hover': {

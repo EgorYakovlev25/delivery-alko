@@ -2,8 +2,6 @@ import { Group, Rating, Stack, Text, ScrollArea, Avatar } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 
 export default function ReviewsCard({ review }) {
-    console.log(review);
-
     return (
         <Carousel.Slide p={'lg'} mx={'lg'} bg={'gray.1'} bdrs={'md'}>
             <Stack

@@ -22,12 +22,11 @@ export default function Cart() {
     };
 
     const totalPrice = productCart.reduce((sum, item) => sum + Number(item.count || 1) * Number(item.price), 0);
-    console.log(productCart);
     
     if (productCart.length == 0) {
         return (
             <Stack justify="center" align="center">
-                <Title>Корзина пустая 😕</Title>
+                <Title size={'xl'}>Корзина пустая 😕</Title>
                 <Text size="md" c={'gray.6'}>
                     Вероятней всего, вы еще не выбрали товар.
                 </Text>

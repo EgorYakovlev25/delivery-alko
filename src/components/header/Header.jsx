@@ -10,7 +10,7 @@ export default function Header() {
         { label: "ГЛАВНАЯ", href: "/" },
         { label: "МАГАЗИН", href: "/shop" },
         { label: "ДОСТАВКА И ОПЛАТА", href: "/delivery" },
-        { label: <IconBasket />, href: "/cart" },
+        { label: <IconBasket size={24} />, href: "/cart" },
     ];
 
     return (
@@ -19,35 +19,71 @@ export default function Header() {
             justify="space-between"
             mt={'xl'}
             mb={'xl'}
+            align="center"
+            direction={{ base: 'column', sm: 'row' }}
+            gap={{ base: 'md', sm: 0 }}
+            sx={{
+                '@media (max-width: 600px)': {
+                    padding: '8px 0',
+                },
+            }}
         >
             <Group gap={0} onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
-                <IconTruckDelivery />
-                <IconGlassFull />
+                <IconTruckDelivery size={28} style={{ marginRight: 4 }} />
+                <IconGlassFull size={28} />
             </Group>
 
-            <Group justify="center" gap="md">
+            <Group justify="center" gap="md"
+                sx={{
+                    '@media (max-width: 600px)': {
+                        flexDirection: 'column',
+                        gap: 4,
+                    },
+                }}
+            >
                 {links.map((link) => (
                     <Button
                         key={link.href}
                         variant="subtle"
                         color={link.href === pathname && "gray"}
                         onClick={() => navigate(link.href)}
+                        size="sm"
+                        sx={{
+                            fontSize: 14,
+                            '@media (max-width: 600px)': {
+                                width: '100%',
+                                fontSize: 13,
+                                padding: '6px 0',
+                            },
+                        }}
                     >
                         {link.label}
                     </Button>
                 ))}
             </Group>
 
-            <Group>
-                <Stack gap="0">
-                    <Text>КРУГЛОСУТОЧНО</Text>
-                    <Text fw={500}>+7 (999) 999-99-99</Text>
+            <Group
+                sx={{
+                    '@media (max-width: 600px)': {
+                        flexDirection: 'row',
+                        gap: 8,
+                    },
+                }}
+            >
+                <Stack gap="0" sx={{
+                    '@media (max-width: 600px)': {
+                        fontSize: 12,
+                        alignItems: 'flex-end',
+                    },
+                }}>
+                    <Text size="xs">КРУГЛОСУТОЧНО</Text>
+                    <Text fw={500} size="sm">+7 (999) 999-99-99</Text>
                 </Stack>
                 <ActionIcon
-                    size={'xl'}
+                    size={'lg'}
                     radius={'xl'}
                 >
-                    <IconBrandTelegram />
+                    <IconBrandTelegram size={22} />
                 </ActionIcon>
             </Group>
         </Flex>

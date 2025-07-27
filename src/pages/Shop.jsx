@@ -113,7 +113,7 @@ export default function Shop() {
                 </Box>
             </Flex>
 
-            <Stack justify="center">
+            <Stack align="flex-start">
                 {
                     filteredData.length === 0 ?
                         <Text size="xl" c={'dimmed'}>

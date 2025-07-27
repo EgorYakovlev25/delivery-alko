@@ -19,13 +19,20 @@ export default function Reviews() {
             w={"100%"}
             withIndicators={false}
             height={150}
-            slideSize="30%"
-            slideGap="xl"
+            slideSize={{ base: '100%', sm: '50%', md: '33.3333%' }}
+            slideGap={{ base: 0, sm: 'md', md: 'xl' }}
             controlsOffset="xs"
             plugins={[autoplay.current]}
             onMouseEnter={autoplay.current.stop}
             onMouseLeave={() => autoplay.current.play()}
             emblaOptions={{ loop: true, align: 'center' }}
+            sx={{
+                maxWidth: 600,
+                '@media (max-width: 600px)': {
+                    height: 120,
+                    maxWidth: 400,
+                },
+            }}
         >
             {
                 reviews.map((review, idx) => (

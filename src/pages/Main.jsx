@@ -24,13 +24,15 @@ export default function Main() {
                     </Text>
                 </Box>
 
-                <Stack w={'30%'}>
+                <Stack w={{ base: '100%', sm: '30%' }} gap={{ base: 'sm', sm: 'xl' }}>
                     <Button
                         onClick={() => navigate('/shop')}
+                        fullWidth
+                        size="md"
                     >
                         Выбрать товар
                     </Button>
-                    <Button color="blue.4">Заказать через ТГ</Button>
+                    <Button color="blue.4" fullWidth size="md">Заказать через ТГ</Button>
                 </Stack>
             </Stack>
 
