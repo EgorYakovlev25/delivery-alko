@@ -14,6 +14,7 @@ export default function Shop() {
     const [products, setProducts] = React.useState([]);
     const [search, setSearch] = React.useState('');
     const [categoryFilter, setCategoryFilter] = React.useState([]);
+    const [isLoading, setIsLoading] = React.useState(true);
     const [rangePrice, setRangePrice] = React.useState([0, 6000]);
     const [cart, setCart] = useState(() => {
         return JSON.parse(localStorage.getItem('productCart')) || [];
@@ -64,6 +65,7 @@ export default function Shop() {
         const fetchData = async () => {
             const data = await getProducts();
             setProducts(data);
+            setIsLoading(false);
         }
         fetchData();
     }, [])
@@ -88,7 +90,6 @@ export default function Shop() {
                     <Text>Выберите категорию</Text>
                     <MultiSelect
                         placeholder="Напитки"
-                        searchable
                         nothingFoundMessage="Нет такого напитка"
                         value={categoryFilter}
                         onChange={setCategoryFilter}
@@ -122,9 +123,11 @@ export default function Shop() {
 
             <Stack align="flex-start">
                 {
-                    filteredData.length === 0 ?
+                    isLoading ?
+                        <Loader color="blue" /> :
+                        filteredData.length === 0 ?
                         <Text size="xl" c={'dimmed'}>
-                            <Loader color="blue" />
+                            Нет таких товаров
                         </Text> :
                         filteredData.map((item, index) => (
                             <Category
