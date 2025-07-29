@@ -19,20 +19,26 @@ export default function Main() {
                     </Text>
                     <Text size="sm" fw={500} c="gray.7">
                         Закажите алкоголь с доставкой на дом в Уфе — от 15 минут, даже ночью.
-                        В наличии водка, пиво, вино, шампанское, виски, ликёры и другие напитки. Так же имеется возможность заказать закуску
+                        В наличии водка, пиво, вино, шампанское, виски, ликёры и другие напитки. Так же имеется возможность заказать закуску.
                         Работаем круглосуточно. Стоимость доставки по Уфе — от 300 рублей.
                     </Text>
                 </Box>
 
                 <Stack w={{ base: '100%', sm: '30%' }} gap={{ base: 'sm', sm: 'xl' }}>
                     <Button
-                        onClick={() => navigate('/shop')}
+                        onClick={() => window.open("tel:+79999999999", "_blank")}
                         fullWidth
                         size="md"
                     >
-                        Выбрать товар
+                        Заказать
                     </Button>
-                    <Button color="blue.4" fullWidth size="md">Заказать через ТГ</Button>
+                    <Button
+                        onClick={() => window.open("https://t.me/+79999999999", "_blank")}
+                        fullWidth
+                        size="md"
+                    >
+                        Заказать через ТГ
+                    </Button>
                 </Stack>
             </Stack>
 
@@ -55,6 +61,31 @@ export default function Main() {
                 <Text size="xl" fw={500}>Доставка по всей Уфе</Text>
                 <iframe style={{ borderRadius: "10px", width: "100%" }} src="https://yandex.ru/map-widget/v1/?um=constructor%3A57eb158b2214abc6c88da066335973659db7997fb7a786bb1acb21aef9d41022&amp;source=constructor" width="1000" height="200" frameborder="0"></iframe>
             </Stack>
+
+            <Box size={'xs'} mb={'xl'}>
+                <Text
+                    size="xl"
+                    fw={500}
+                    mb={'md'}
+                >
+                    Как заказать?
+                </Text>
+                <Stack gap={'md'}>
+                    <Text size="lg" fw={500} c="gray.7">
+                        • Позвоните по телефону: <Text c="blue" onClick={() => window.open("tel:+79999999999", "_blank")}>+7 (999) 999-99-99</Text>
+                    </Text>
+                    <Text size="lg" fw={500} c="gray.7">
+                        • Напишите в телеграм: <Text c="blue" onClick={() => window.open("https://t.me/@alco_ufa_bot", "_blank")}>@alco_ufa_bot</Text>
+                    </Text>
+                    <Text size="lg" fw={500} c="gray.7">
+                        • Закажите через сайт
+                    </Text>
+                </Stack>
+
+                <Text size="lg" fw={500} c="gray.7" mt={'md'}>
+                    Укажите, какие напитки вам нужны, объём и адрес. Если хотите добавить продукты — просто продиктуйте список и курьер всё привезёт.
+                </Text>
+            </Box>
         </Stack>
     );
 }

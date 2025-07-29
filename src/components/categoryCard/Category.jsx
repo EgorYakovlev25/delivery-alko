@@ -1,10 +1,10 @@
-import { Flex, Stack, Text } from "@mantine/core";
+import { Flex, Stack, Text, Title } from "@mantine/core";
 import CategoryCard from "./CategoryCard";
 
 export default function Category({ item, cart, addCart, deleteCart }){
     return (
         <Stack mb={'xl'}>
-            <Text size="xl" fw={700}>{item.categoryName}</Text>
+            <Title fw={700}>{item.categoryName}</Title>
             <Flex gap={'xl'} wrap={'wrap'} justify="flex-start">
                 {
                     item.products.map((product, index) => (

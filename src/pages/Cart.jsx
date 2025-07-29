@@ -33,7 +33,7 @@ export default function Cart() {
                 <Text size="md" c={'gray.6'}>
                     Для того, чтобы заказать товар, перейдите в магазин.
                 </Text>
-                <Button onClick={() => navigate('/shop')}>Вернуться в магазин</Button>
+                <Button onClick={() => navigate('/shop')}>Вернуться в ассортимент</Button>
             </Stack>
         )
     }

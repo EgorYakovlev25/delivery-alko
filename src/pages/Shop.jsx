@@ -13,7 +13,7 @@ export default function Shop() {
     const [products, setProducts] = React.useState([]);
     const [search, setSearch] = React.useState('');
     const [categoryFilter, setCategoryFilter] = React.useState([]);
-    const [rangePrice, setRangePrice] = React.useState([0, 3000]);
+    const [rangePrice, setRangePrice] = React.useState([0, 6000]);
     const [cart, setCart] = useState(() => {
         return JSON.parse(localStorage.getItem('productCart')) || [];
     });
@@ -92,9 +92,10 @@ export default function Shop() {
                     <RangeSlider
                         color="blue"
                         min={0}
-                        max={3000}
-                        domain={[0, 3000]}
-                        defaultValue={[0, 3000]}
+                        max={6000}
+                        step={100}
+                        domain={[0, 6000]}
+                        defaultValue={[0, 6000]}
                         value={rangePrice}
                         onChange={setRangePrice}
                         labelTransitionProps={{
@@ -104,10 +105,7 @@ export default function Shop() {
                         }}
                         marks={[
                             { value: 0, label: '0 р.' },
-                            { value: 750, label: '750 р.' },
-                            { value: 1500, label: '1500 р.' },
-                            { value: 2250, label: '2250 р.' },
-                            { value: 3000, label: '3000 р.' },
+                            { value: 6000, label: '6000 р.' },
                         ]}
                     />
                 </Box>

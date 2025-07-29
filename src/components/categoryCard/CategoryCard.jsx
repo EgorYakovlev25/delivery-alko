@@ -5,7 +5,7 @@ import useAddCart from '../../hooks/useAddCart';
 
 export default function CategoryCard({ product, cart, addCart, deleteCart }) {
     const [isAddedCart, setIsAddedCart] = React.useState(false);
-
+    
     useEffect(() => {
         if (cart.some(item => item.name === product.name && item.price === product.price)) {
             setIsAddedCart(true);

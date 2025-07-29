@@ -8,7 +8,7 @@ export default function Header() {
 
     const links = [
         { label: "ГЛАВНАЯ", href: "/" },
-        { label: "МАГАЗИН", href: "/shop" },
+        { label: "АССОРТИМЕНТ", href: "/shop" },
         { label: "ДОСТАВКА И ОПЛАТА", href: "/delivery" },
         { label: <Group gap={'xs'}>КОРЗИНА <IconBasket size={24} /></Group>, href: "/cart" },
     ];
@@ -82,6 +82,7 @@ export default function Header() {
                 <ActionIcon
                     size={'lg'}
                     radius={'xl'}
+                    onClick={() => window.open("https://t.me/+79999999999", "_blank")}
                 >
                     <IconBrandTelegram size={22} />
                 </ActionIcon>
