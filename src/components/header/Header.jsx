@@ -77,12 +77,12 @@ export default function Header() {
                     },
                 }}>
                     <Text size="xs">КРУГЛОСУТОЧНО</Text>
-                    <Text fw={500} size="sm">+7 (999) 999-99-99</Text>
+                    <Text fw={500} size="sm">+7 (993) 133-68-33</Text>
                 </Stack>
                 <ActionIcon
                     size={'lg'}
                     radius={'xl'}
-                    onClick={() => window.open("https://t.me/+79999999999", "_blank")}
+                    onClick={() => window.open("https://t.me/+79931336833", "_blank")}
                 >
                     <IconBrandTelegram size={22} />
                 </ActionIcon>

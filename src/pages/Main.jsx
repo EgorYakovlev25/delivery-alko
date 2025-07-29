@@ -26,14 +26,14 @@ export default function Main() {
 
                 <Stack w={{ base: '100%', sm: '30%' }} gap={{ base: 'sm', sm: 'xl' }}>
                     <Button
-                        onClick={() => window.open("tel:+79999999999", "_blank")}
+                        onClick={() => window.open("tel:+79931336833", "_blank")}
                         fullWidth
                         size="md"
                     >
                         Заказать
                     </Button>
                     <Button
-                        onClick={() => window.open("https://t.me/+79999999999", "_blank")}
+                        onClick={() => window.open("https://t.me/+79931336833", "_blank")}
                         fullWidth
                         size="md"
                     >
@@ -72,10 +72,10 @@ export default function Main() {
                 </Text>
                 <Stack gap={'md'}>
                     <Text size="lg" fw={500} c="gray.7">
-                        • Позвоните по телефону: <Text c="blue" onClick={() => window.open("tel:+79999999999", "_blank")}>+7 (999) 999-99-99</Text>
+                        • Позвоните по телефону: <Text c="blue" style={{ cursor: 'pointer' }} onClick={() => window.open("tel:+79931336833", "_blank")}>+7 (993) 133-68-33</Text>
                     </Text>
                     <Text size="lg" fw={500} c="gray.7">
-                        • Напишите в телеграм: <Text c="blue" onClick={() => window.open("https://t.me/@alco_ufa_bot", "_blank")}>@alco_ufa_bot</Text>
+                        • Напишите в телеграм: <Text c="blue" style={{ cursor: 'pointer' }} onClick={() => window.open("https://t.me/+79931336833", "_blank")}>+7 (993) 133-68-33</Text>
                     </Text>
                     <Text size="lg" fw={500} c="gray.7">
                         • Закажите через сайт
