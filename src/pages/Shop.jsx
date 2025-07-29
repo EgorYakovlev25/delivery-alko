@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { Flex, Container, Stack, Text, Box, Button, RangeSlider, MultiSelect, Group, Title } from "@mantine/core";
+import { Flex, Container, Stack, Text, Box, Button, RangeSlider, MultiSelect, Group, Title, Loader, ActionIcon } from "@mantine/core";
+import { IconArrowUp } from '@tabler/icons-react';
 import Header from "../components/header/Header.jsx";
 import CategoryCard from "../components/categoryCard/CategoryCard.jsx";
 import Reviews from "../components/reviews/Reviews.jsx";
@@ -21,6 +22,14 @@ export default function Shop() {
     const { getProducts } = useGetProducts();
     const { addCart } = useAddCart({cart, setCart});
     const { deleteCart } = useDeleteCart({cart, setCart})
+
+    // Функция для прокрутки наверх
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
 
     // Фильтрация данных с мемоизацией
     const filteredData = useMemo(() => {
@@ -115,7 +124,7 @@ export default function Shop() {
                 {
                     filteredData.length === 0 ?
                         <Text size="xl" c={'dimmed'}>
-                            Мы ничего не нашли
+                            <Loader color="blue" />
                         </Text> :
                         filteredData.map((item, index) => (
                             <Category
@@ -128,6 +137,23 @@ export default function Shop() {
                         ))
                 }
             </Stack>
+            
+            {/* Кнопка "Наверх" */}
+            <ActionIcon
+                size="lg"
+                variant="filled"
+                color="blue"
+                onClick={scrollToTop}
+                style={{
+                    position: 'fixed',
+                    bottom: '20px',
+                    right: '20px',
+                    zIndex: 1000,
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                }}
+            >
+                <IconArrowUp size={20} />
+            </ActionIcon>
         </Stack>
     );
 }

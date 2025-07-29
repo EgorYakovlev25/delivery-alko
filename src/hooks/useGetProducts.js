@@ -1,5 +1,4 @@
 import { axiosInstance } from "../services/axios"
-import category from "../bd/category.json"
 
 export default function useGetProducts() {
     const getProducts = async () => {
