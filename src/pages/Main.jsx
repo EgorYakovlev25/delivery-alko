@@ -1,4 +1,4 @@
-import { Flex, Container, Stack, Text, Box, Button } from "@mantine/core";
+import { Flex, Container, Stack, Text, Box, Button, Title } from "@mantine/core";
 import Header from "../components/header/Header.jsx";
 import CategoryCard from "../components/categoryCard/CategoryCard.jsx";
 import Reviews from "../components/reviews/Reviews.jsx";
@@ -10,6 +10,7 @@ export default function Main() {
         <Stack gap="md" justify="center" align="center">
             <Stack bg={'gray.1'} p={'xl'} mb={'xl'} bdrs={'md'} gap={'xl'} justify="center" align="center">
                 <Box size={'xs'} align="center">
+                    <Title>alkoboss24</Title>
                     <Text
                         size="xl"
                         fw={500}
