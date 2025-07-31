@@ -72,10 +72,7 @@ export default function Main() {
                 </Text>
                 <Stack gap={'md'}>
                     <Text size="lg" fw={500} c="gray.7">
-                        • Позвоните по телефону: <Text c="blue" style={{ cursor: 'pointer' }} onClick={() => window.open("tel:+79931336833", "_blank")}>+7 (993) 133-68-33</Text>
-                    </Text>
-                    <Text size="lg" fw={500} c="gray.7">
-                        • Напишите в телеграм: <Text c="blue" style={{ cursor: 'pointer' }} onClick={() => window.open("https://t.me/+79931336833", "_blank")}>+7 (993) 133-68-33</Text>
+                        • Позвоните или напишите в телеграм: <Text c="blue" style={{ cursor: 'pointer' }} onClick={() => window.open("https://t.me/+79931336833", "_blank")}>+7 (993) 133-68-33</Text>
                     </Text>
                     <Text size="lg" fw={500} c="gray.7">
                         • Закажите через сайт
